@@ -1,71 +1,119 @@
 # Faith+ MVP
 
-A Christian habit-forming app with temptation interception, daily verses, and church finder functionality.
+## Project Description
+
+Faith+ is a comprehensive Christian web application designed to help believers strengthen their faith through daily practice, community engagement, and spiritual resources. The platform combines scripture study tools, community features, worship music, and interactive games to create a holistic faith development experience that can be accessed anywhere and anytime.
 
 ## Features
 
-1. **Temptation Interceptor**: Enter a struggle or temptation and receive Scripture-based encouragement
-2. **Daily Verse**: Get a new inspiring Bible verse with reflection each day
-3. **Church Finder**: Find churches near your location using Google Maps
+### Spotify Integration
 
-## Technical Implementation
+The application includes integration with Spotify to provide worship music directly within the app:
 
-This app is built with:
+- **Current Status**: Partially implemented, with known authentication issues being addressed
+- **Connection Flow**: Users can connect their Spotify accounts via OAuth
+- **Playlist Access**: Browse curated worship playlists and view track listings
+- **Premium Features**: Premium Spotify users can play music directly in the app (in development)
+- **Debugging Tools**: Diagnostic page to help troubleshoot connection issues
 
-- Next.js App Router for the frontend and API routes
-- Google's Gemini API for LLM integration
-- Google Maps API for the church finder feature
-- Free Bible API for verse retrieval
+### Bible
 
-## Setup Instructions for v0 Environment
+The Bible feature provides access to scripture in multiple translations:
 
-### 1. Gemini API Integration
+- **Bible Reading**: Read full chapters with verse numbering
+- **Multiple Translations**: Switch between different Bible translations
+- **Search**: Search for specific passages or keywords
+- **Navigation**: Easy chapter and book navigation
+- **Responsive Design**: Optimized for both desktop and mobile reading
 
-The app uses Google's Gemini API for generating Scripture-based encouragement and reflections. The API key is already configured in the app:
+### Scripture Q&A
 
-\`\`\`
-GEMINI_API_KEY=AIzaSyBWZhwhmkkR5bUaQyMOaujhQHyDYMna7uQ
-\`\`\`
+This AI-powered feature allows users to ask questions about the Bible:
 
-### 2. Google Maps API Key
+- **Question Input**: Type any Bible-related question
+- **AI Responses**: Receive scripture-based answers generated with AI
+- **Related Questions**: View suggested related questions
+- **Scripture References**: All answers include relevant Bible verse references
+- **User Feedback**: Provide feedback on answer quality
 
-To use the Church Finder feature, you need to obtain a Google Maps API key:
+### Memory Game
 
-1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Enable the following APIs:
-   - Maps JavaScript API
-   - Places API
-   - Geocoding API
-4. Create an API key with appropriate restrictions
-5. Replace `YOUR_GOOGLE_MAPS_API_KEY` in `app/api/config.ts` with your actual API key
+An interactive game to help users memorize Bible verses:
 
-### 3. Bible Verses
+- **Game Modes**: 
+  - Fill in the Blanks: Complete verses by filling in missing words
+  - Word Order: Arrange words in the correct order to form complete verses
+  - Reference Match: Match Bible references with their corresponding verses
+- **Scoring**: Track progress with a scoring system
+- **Difficulty Levels**: Progress through increasingly challenging verses
+- **Multiple Sessions**: Play through multiple verses in each session
 
-The app uses a combination of popular verses and the Gemini API to generate reflections. No additional API key is required for the basic functionality.
+### Community
 
-For a production version, you might want to integrate with a more comprehensive Bible API such as:
+A platform for believers to connect and discuss faith topics:
+
+- **Discussion Groups**: Join topic-based groups
+- **Posts and Comments**: Create posts and comment on others' content
+- **Topics**: Browse discussions organized by spiritual topics
+- **Interaction**: Like and reply to comments
+- **View Counts**: See topic popularity through view metrics
+
+### Events
+
+Discover and participate in Christian events:
+
+- **Event Listings**: Browse upcoming Christian events
+- **Categories**: Filter events by type (conferences, prayer meetings, etc.)
+- **Details**: View event details including time, location, and description
+- **Responsive Design**: Access events information on any device
+
+### Worship Music
+
+Access worship music directly within the app:
+
+- **Featured Playlists**: Browse curated worship music collections
+- **My Playlists**: Access your personal playlists (requires Spotify connection)
+- **Music Categories**: Browse by genre, mood, or occasion
+- **Visual Design**: Album artwork and playlist imagery
+- **Search**: Find specific artists or songs (in development)
+
+### Saved Items
+
+Save and organize content from across the app:
+
+- **Bookmarking**: Save verses, reflections, and other content
+- **Categories**: Organize saved items by type
+- **Quick Access**: Easily return to saved content
+- **Management**: Add notes and remove saved items
+
+### Profile
+
+Manage your account and preferences:
+
+- **Account Management**: Update personal information
+- **Preferences**: Set app preferences and notification settings
+- **Activity History**: View past interactions
+- **Connection Management**: Control third-party app connections
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js 18.x or higher
+- npm 8.x or higher
 - [Bible API](https://bible-api.com/) (free, no key required)
 - [API.Bible](https://scripture.api.bible/) (requires registration)
+- A Supabase account for the database and authentication
+- A Spotify Developer account for music integration
+- A Google Maps API key for the church finder feature
+- A Gemini API key for AI-powered features (optional)
 
-## Using the App
+### Installation
 
-1. **Temptation Interceptor**:
-   - Enter a temptation or struggle in the input field
-   - Click "Get Encouragement" to receive a Scripture-based response
-   - View the verse, reflection, application, and prayer
-   - Provide feedback and share your thoughts
-
-2. **Daily Verse**:
-   - View the daily verse and reflection
-   - Click "New Verse" to get a different verse
-   - Copy or save verses you find meaningful
-
-3. **Church Finder**:
-   - Allow location access for better results
-   - Or enter a ZIP code/city name to search
-   - View nearby churches on the map
-   - Click on a church for more details
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/faith-plus.git
+   cd faith-plus
 
 ## Development Notes
 
