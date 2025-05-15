@@ -112,8 +112,10 @@ Manage your account and preferences:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/faith-plus.git
-   cd faith-plus
+   - git clone https://github.com/your-username/faith-plus.git
+   - cd faith-plus
+   - run 'pnpm install' to install packages
+   - run 'pnpm run dev' to start the development server
 
 ## Development Notes
 
